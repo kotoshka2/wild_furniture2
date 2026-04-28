@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Architechture.Ritual.Data.RitualRecipe
   id: test
   requiredComponents: 0200000003000000020000000300000002000000
-  minSacrificeValue: 0
+  minSacrificeValue: 10
   resultFurniture: {fileID: 11400000, guid: d7cc62c7b9b574a408d1d97b288719ca, type: 2}
