@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221c08dc30ddf124aa46fedc0311c344, type: 3}
+  m_Name: Ruby
+  m_EditorClassIdentifier: Assembly-CSharp::Architechture.Ritual.Data.RitualComponentData
+  id: 3
+  displayName: "\u0440\u0443\u0431\u0438\u043D"
+  worldPrefab: {fileID: 8170869515712588670, guid: 9a02d1bf48b419c49bf84c838f92983e, type: 3}
+  icon: {fileID: 0}

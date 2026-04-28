@@ -13,13 +13,18 @@ public class GravityController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private LayerMask grabbableLayer;
     [SerializeField] private float grabDistance = 8f;
-    [SerializeField] private float holdDistance = 3f;
     [SerializeField] private float moveForce = 80f;
     [SerializeField] private float damping = 8f;
     [SerializeField] private float throwForce = 18f;
 
+    [Header("Distance Settings")]
+    [SerializeField] private float minHoldDistance = 1.5f;
+    [SerializeField] private float maxHoldDistance = 15f;
+    [SerializeField] private float scrollSpeed = 0.5f;
+
     private Rigidbody heldRb;
     private bool isHolding;
+    private float currentHoldDistance;
 
     private void OnEnable()
     {
@@ -38,13 +43,29 @@ public class GravityController : MonoBehaviour
         throwAction.action.started -= OnThrowStarted;
     }
 
+    private void Update()
+    {
+        if (!isHolding || heldRb == null)
+            return;
+
+        if (Mouse.current != null)
+        {
+            float scroll = Mouse.current.scroll.ReadValue().y;
+            if (Mathf.Abs(scroll) > 0.01f)
+            {
+                currentHoldDistance += Mathf.Sign(scroll) * scrollSpeed;
+                currentHoldDistance = Mathf.Clamp(currentHoldDistance, minHoldDistance, maxHoldDistance);
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         if (!isHolding || heldRb == null)
             return;
 
         Vector3 targetPosition = playerCamera.transform.position +
-                                 playerCamera.transform.forward * holdDistance;
+                                 playerCamera.transform.forward * currentHoldDistance;
 
         Vector3 direction = targetPosition - heldRb.position;
 
@@ -67,6 +88,9 @@ public class GravityController : MonoBehaviour
                 heldRb.useGravity = false;
                 heldRb.linearDamping = 6f;
                 isHolding = true;
+
+                currentHoldDistance = Vector3.Distance(playerCamera.transform.position, heldRb.position);
+                currentHoldDistance = Mathf.Clamp(currentHoldDistance, minHoldDistance, maxHoldDistance);
             }
         }
     }
