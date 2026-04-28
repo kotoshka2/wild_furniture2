@@ -48,9 +48,10 @@ GameObject:
   - component: {fileID: 377766768624970629}
   - component: {fileID: 8461086959236386219}
   - component: {fileID: 5725344837262676515}
+  - component: {fileID: 6924669732365769065}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +246,18 @@ MonoBehaviour:
   moveForce: 80
   damping: 8
   throwForce: 18
+--- !u!114 &6924669732365769065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9160202675659113695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6394deb5ca9b0c458d8a860502974ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HideCursor
 --- !u!1001 &4375062380412836130
 PrefabInstance:
   m_ObjectHideFlags: 0

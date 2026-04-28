@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd863289a3c1b3f45abccb113fcef72d, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: Assembly-CSharp::Architechture.Ritual.Data.RitualRecipe
+  id: test
+  requiredComponents: 0200000003000000020000000300000002000000
+  minSacrificeValue: 0
+  resultFurniture: {fileID: 11400000, guid: d7cc62c7b9b574a408d1d97b288719ca, type: 2}
